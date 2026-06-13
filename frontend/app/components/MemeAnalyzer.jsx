@@ -206,13 +206,6 @@ export default function MemeAnalyzer() {
           </button>
         </div>
       </div>
-
-      {/* Footer */}
-      <div className="bg-surface-container-low/50 px-6 py-3 border-t border-outline-variant/30">
-        <p className="text-xs text-outline-variant text-center">
-          IndoBERTweet — Klasifikasi Hate / Not Hate dari teks meme Indonesia
-        </p>
-      </div>
     </div>
   );
 }

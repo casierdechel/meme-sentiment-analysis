@@ -116,7 +116,7 @@ export default function ResultPanel() {
                   {result.is_hate ? "Mengandung Ujaran Kebencian" : "Tidak Mengandung Ujaran Kebencian"}
                 </span>
               </div>
-              <p className="text-xs text-outline-variant">
+              <p className="text-white text-outline-variant">
                 Tingkat keyakinan: {(result.confidence * 100).toFixed(1)}%
               </p>
             </div>
@@ -124,7 +124,7 @@ export default function ResultPanel() {
             {/* Confidence Bar */}
             <div>
               <div className="flex justify-between text-sm mb-2">
-                <span className="text-outline-variant">Tingkat Keyakinan</span>
+                <span className="text-sm font-medium text-on-surface-variant flex items-center gap-2">Tingkat Keyakinan</span>
                 <span className="font-medium text-on-surface">{(result.confidence * 100).toFixed(1)}%</span>
               </div>
               <div className="w-full bg-surface-container-highest rounded-full h-2.5">
@@ -140,13 +140,13 @@ export default function ResultPanel() {
             {/* Probability Details */}
             <div className="grid grid-cols-2 gap-3">
               <div className="p-3 bg-surface-container-low rounded-xl text-center">
-                <div className="text-outline-variant text-sm mb-1">Not Hate</div>
+                <div className="text-sm font-medium text-on-surface-variant flex items-center gap-2">Not Hate</div>
                 <div className="font-bold text-2xl text-green-400">
                   {(result.probabilities.not_hate * 100).toFixed(1)}%
                 </div>
               </div>
               <div className="p-3 bg-surface-container-low rounded-xl text-center">
-                <div className="text-outline-variant text-sm mb-1">Hate</div>
+                <div className="text-sm font-medium text-on-surface-variant flex items-center gap-2">Hate</div>
                 <div className="font-bold text-2xl text-red-400">
                   {(result.probabilities.hate * 100).toFixed(1)}%
                 </div>
@@ -155,7 +155,7 @@ export default function ResultPanel() {
 
             {/* Input Review */}
             <div className="p-3 bg-surface-container-lowest rounded-xl">
-              <p className="text-outline-variant text-xs mb-2">Teks yang dianalisis:</p>
+              <p className="text-on-surface-variant text-xs mb-2">Teks yang dianalisis:</p>
               <p className="text-sm text-on-surface italic leading-relaxed">
                 "{result.ocr_text}"
               </p>
@@ -172,7 +172,7 @@ export default function ResultPanel() {
             {/* Feedback Section */}
             {!feedbackGiven && (
               <div className="pt-2 border-t border-outline-variant/30">
-                <p className="text-xs text-outline-variant text-center mb-3">
+                <p className="text-sm text-on-surface-variant text-center mb-3">
                   Apakah hasil analisis ini benar?
                 </p>
                 <div className="flex gap-3">
@@ -201,6 +201,13 @@ export default function ResultPanel() {
             )}
           </div>
         )}
+      </div>
+
+      {/* Footer */}
+      <div className="bg-surface-container-low/50 px-6 py-3 border-t border-outline-variant/30">
+        <p className="text-xs text-outline-variant text-center">
+          IndoBERTweet — Klasifikasi Hate / Not Hate dari teks meme Indonesia
+        </p>
       </div>
     </div>
   );
